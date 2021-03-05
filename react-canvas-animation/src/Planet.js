@@ -1,16 +1,45 @@
-// import React, { useState } from 'react';
-import Canvas from './Canvas';
+import React from 'react';
 
-const Planet = () => {
-  const draw = (ctx, stageWidth, stageHeight) => {
-    ctx.clearRect(0, 0, stageHeight, stageHeight);
+export default function Planet() {
+  const update = (planets, planet) => {
+    if (planet.clicked) {
+      planet.x = planet.mouseX;
+      planet.y = planet.mouseY;
+      console.log('mouse',planet.mouseX, planet.mouseY);
+    } else {
+      let star = planets.find(element => element.name === planet.star);
+
+      planet.x = star.x + planet.orbitRadius * Math.cos(planet.theta);
+      planet.y = star.y + planet.orbitRadius * Math.sin(planet.theta);
+    }
+  }
+
+  const draw = (ctx, radius, color, x, y) => {
     ctx.beginPath();
-    ctx.arc(stageWidth/2, stageHeight/2, 20, 0, Math.PI * 2);
-    ctx.fillStyle = 'black';
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fillStyle = color;
     ctx.fill();
     ctx.closePath();
   }
-  return <Canvas draw={draw} type='dynamic' id='main'/>
 }
 
-export default Planet;
+export const update = (planets, planet) => {
+  if (planet.clicked) {
+    planet.x = planet.mouseX;
+    planet.y = planet.mouseY;
+    console.log('mouse',planet.mouseX, planet.mouseY);
+  } else {
+    let star = planets.find(element => element.name === planet.star);
+
+    planet.x = star.x + planet.orbitRadius * Math.cos(planet.theta);
+    planet.y = star.y + planet.orbitRadius * Math.sin(planet.theta);
+  }
+}
+
+export const draw = (ctx, radius, color, x, y) => {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2);
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.closePath();
+}

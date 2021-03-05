@@ -14,6 +14,7 @@ const initialPlanets = [
     y: window.innerHeight/2,
     mouseX: window.innerWidth/2,
     mouseY: window.innerHeight/2,
+    clicked: false,
   },
   // {
   //   id: 1,
@@ -50,6 +51,7 @@ const initialPlanets = [
     y: 0,
     mouseX: 0,
     mouseY: 0,
+    clicked: false,
   },
   {
     id: 4,
@@ -64,6 +66,7 @@ const initialPlanets = [
     y: 0,
     mouseX: 0,
     mouseY: 0,
+    clicked: false,
   },
   // {
   //   id: 5,
@@ -114,9 +117,17 @@ const initialPlanets = [
 
 function planetReducer(state, action) {
   switch (action.type) {
-    case 'DRAG':
+    case 'ANIMATE':
       return state.map(planet =>
         planet.name === action.name ? { ...planet, x: action.x, y: action.y} : planet
+      );
+    case 'CLICK':
+      return state.map(planet =>
+        planet.name === action.name ? { ...planet, clicked: !planet.clicked} : planet
+      );
+    case 'DRAG':
+      return state.map(planet =>
+        planet.name === action.name ? { ...planet, mouseX: action.mouseX, mouxeY: action.mouseY} : planet
       );
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -125,7 +136,6 @@ function planetReducer(state, action) {
 
 const PlanetStateContext = createContext();
 const PlanetDispatchContext = createContext();
-const PlanetClickedContext = createContext();
 
 export function PlanetProvider({children}) {
   const [state, dispatch] = useReducer(planetReducer, initialPlanets);
@@ -134,9 +144,7 @@ export function PlanetProvider({children}) {
   return (
     <PlanetStateContext.Provider value={state}>
       <PlanetDispatchContext.Provider value={dispatch}>
-        <PlanetClickedContext.Provider value={clicked}>
-          {children}
-        </PlanetClickedContext.Provider>
+        {children}
       </PlanetDispatchContext.Provider>
     </PlanetStateContext.Provider>
   );
@@ -154,16 +162,6 @@ export function usePlanetState() {
 
 export function usePlanetDispatch() {
   const context = useContext(PlanetDispatchContext);
-
-  if (!context) {
-    throw new Error('Cannot find PlanetProvider');
-  }
-
-  return context;
-}
-
-export function usePlanetClicked() {
-  const context = useContext(PlanetClickedContext);
 
   if (!context) {
     throw new Error('Cannot find PlanetProvider');
