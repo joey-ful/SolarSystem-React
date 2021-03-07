@@ -2,7 +2,7 @@ import React from 'react';
 import Canvas from './Canvas';
 
 const Background = () => {
-  const draw = (ctx, stageWidth, stageHeight) => {
+  const draw = (ctx, canvas, stageWidth, stageHeight) => {
     ctx.fillStyle = createGradient(ctx, stageWidth, stageHeight);
     ctx.fillRect(0, 0, stageWidth, stageHeight);
     fillStars(ctx, 200, stageWidth, stageHeight);
