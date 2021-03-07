@@ -26,13 +26,13 @@ const useCanvas = (draw, type) => {
       ctx.scale(ratio, ratio);
       
       window.addEventListener('resize', resize);
-      draw(ctx, canvas, stageWidth, stageHeight);
+      draw(ctx, stageWidth, stageHeight);
     }
 
     let animationFrameId;
 
     const animate = () => {
-      draw(ctx, canvas, stageWidth, stageHeight);
+      draw(ctx, stageWidth, stageHeight);
       
       if (type === 'dynamic') {
         animationFrameId = window.requestAnimationFrame(animate);

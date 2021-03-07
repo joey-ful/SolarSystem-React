@@ -1,11 +1,17 @@
 import React from 'react';
 import Canvas from './Canvas';
+import { useToggleState } from '../contexts/ToggleContext.js';
 
 const Background = () => {
-  const draw = (ctx, canvas, stageWidth, stageHeight) => {
-    ctx.fillStyle = createGradient(ctx, stageWidth, stageHeight);
+  const toggleOptions = useToggleState();
+  const backgroundToggle = toggleOptions.find(option => option.name === 'background').checked;
+
+  const draw = (ctx, stageWidth, stageHeight) => {
+    ctx.fillStyle = backgroundToggle ? createGradient(ctx, stageWidth, stageHeight) : '#4D5769';
     ctx.fillRect(0, 0, stageWidth, stageHeight);
-    fillStars(ctx, 200, stageWidth, stageHeight);
+    if (backgroundToggle) {
+      fillStars(ctx, 200, stageWidth, stageHeight);
+    }
   }
 
   const fillStars = (ctx, starNumber, stageWidth, stageHeight) => {
@@ -40,7 +46,7 @@ const Background = () => {
     return gradient;
   }
 
-  return <Canvas draw={draw} type='static' id='back'/>
+  return <Canvas draw={draw} type='static' id='back-canvas'/>
 }
 
 export default Background;
