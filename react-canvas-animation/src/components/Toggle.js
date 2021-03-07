@@ -1,7 +1,7 @@
-import {useToggleDispatch} from './contexts/ToggleContext.js';
+import {useToggleDispatch} from '../contexts/ToggleContext.js';
 import styled, {css} from 'styled-components';
 import {Input} from './CustomizaztionMenu.js';
-import {colors} from './Colors.js';
+import {colors} from '../consts/Colors.js';
 
 const ToggleLabel = styled.label`
   cursor: pointer;
@@ -65,7 +65,7 @@ const List = styled.li`
   }
 `;
 
-export default function Toggle({optionName, checked, id}) {
+export default function Toggle({optionName, checked}) {
   const dispatch = useToggleDispatch();
 
   const onToggle = () => {
@@ -73,7 +73,6 @@ export default function Toggle({optionName, checked, id}) {
       type: 'TOGGLE',
       name: optionName,
     });
-    console.log(optionName, checked);
   };
 
   return (

@@ -1,7 +1,7 @@
 import {Input} from './CustomizaztionMenu.js';
-import {useRadioDispatch} from './contexts/RadioContext.js';
+import {useRadioDispatch} from '../contexts/RadioContext.js';
 import styled, {css} from 'styled-components';
-import {colors} from './Colors.js';
+import {colors} from '../consts/Colors.js';
 
 const RadioLabel = styled.label`
   position: relative;

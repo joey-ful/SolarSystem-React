@@ -1,6 +1,6 @@
 import Radio from './Radio.js';
 import styled from 'styled-components';
-import {colors} from './Colors.js';
+import {colors} from '../consts/Colors.js';
 
 const RadioBlock = styled.ul`
   position: relative;
@@ -21,7 +21,7 @@ const RadioTitle = styled.h2`
   margin-bottom: 10px;
 `;
 
-export default function RadioList({radioType, radioOptions, id}) {
+export default function RadioList({radioType, radioOptions}) {
   return (
     <RadioBlock>
       <RadioTitle>{radioType}</RadioTitle>

@@ -1,9 +1,9 @@
-import {useRadioState} from './contexts/RadioContext.js';
-import {useToggleState} from './contexts/ToggleContext.js';
+import {useRadioState} from '../contexts/RadioContext.js';
+import {useToggleState} from '../contexts/ToggleContext.js';
 import Toggle from './Toggle.js';
 import RadioList from './RadioList.js';
 import styled from 'styled-components';
-import {colors} from './Colors.js';
+import {colors} from '../consts/Colors.js';
 
 const CustomizationMenuBlock = styled.div`
   position: absolute;

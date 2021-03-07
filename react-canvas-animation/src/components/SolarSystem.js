@@ -1,7 +1,7 @@
 import React from 'react';
-import { planetInfo } from './PlanetContext.js';
+import { planetInfo } from '../consts/PlanetInfo.js';
 import Canvas from './Canvas.js';
-import Planet from './Planet.js';
+import Planet from '../Planet.js';
 
 export default function SolarSystem() {
   let planets = [];

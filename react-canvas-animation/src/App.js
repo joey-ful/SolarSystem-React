@@ -1,7 +1,7 @@
 import React from 'react';
-import SolarSystem from './SolarSystem.js';
-import Background from './Background.js';
-import CustomizationMenu from './CustomizaztionMenu.js';
+import SolarSystem from './components/SolarSystem.js';
+import Background from './components/Background.js';
+import CustomizationMenu from './components/CustomizaztionMenu.js';
 import {RadioProvider} from './contexts/RadioContext.js';
 import {ToggleProvider} from './contexts/ToggleContext.js';
 
