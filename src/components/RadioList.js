@@ -1,3 +1,4 @@
+import React from 'react';
 import Radio from './Radio.js';
 import styled from 'styled-components';
 import {colors} from '../consts/Colors.js';
@@ -21,7 +22,7 @@ const RadioTitle = styled.h2`
   margin-bottom: 10px;
 `;
 
-export default function RadioList({radioType, radioOptions}) {
+function RadioList({radioType, radioOptions}) {
   return (
     <RadioBlock>
       <RadioTitle>{radioType}</RadioTitle>
@@ -37,3 +38,5 @@ export default function RadioList({radioType, radioOptions}) {
     </RadioBlock>
   );
 }
+
+export default React.memo(RadioList);

@@ -1,3 +1,4 @@
+import React, {useCallback} from 'react';
 import {useToggleDispatch} from '../contexts/ToggleContext.js';
 import styled, {css} from 'styled-components';
 import {Input} from './CustomizaztionMenu.js';
@@ -65,15 +66,15 @@ const List = styled.li`
   }
 `;
 
-export default function Toggle({optionName, checked}) {
+function Toggle({optionName, checked}) {
   const dispatch = useToggleDispatch();
 
-  const onToggle = () => {
+  const onToggle = useCallback(() => {
     dispatch({
       type: 'TOGGLE',
       name: optionName,
     });
-  };
+  }, dispatch, optionName);
 
   return (
     <List>
@@ -90,3 +91,5 @@ export default function Toggle({optionName, checked}) {
     </List>
   );
 }
+
+export default React.memo(Toggle);

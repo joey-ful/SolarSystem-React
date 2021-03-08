@@ -1,3 +1,4 @@
+import React, {useCallback} from 'react';
 import {Input} from './CustomizaztionMenu.js';
 import {useRadioDispatch} from '../contexts/RadioContext.js';
 import styled, {css} from 'styled-components';
@@ -65,17 +66,17 @@ const List = styled.li`
   }
 `;
 
-export default function Radio({radioType, name, checked, id}) {
+function Radio({radioType, name, checked, id}) {
   const dispatch = useRadioDispatch();
 
-  const onChange = () => {
+  const onChange = useCallback(() => {
     dispatch({
       type: 'CLICK',
       radioType,
       name,
       id,
     });
-  };
+  }, [dispatch, radioType, name, id]);
 
   return (
     <List>
@@ -95,3 +96,5 @@ export default function Radio({radioType, name, checked, id}) {
     </List>
   );
 }
+
+export default React.memo(Radio);
