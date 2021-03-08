@@ -6,6 +6,6 @@
 - Default setting using a useEffect Hook
 
 [Solar System with Vanilla JavaScript](https://github.com/joey-ful/SolarSystem)
-- Same animation, but in JS
+- Same animation, but in plain JS
 
 [Solar System Step by Step Buildup in JS](https://github.com/joey-ful/SolarSystem-StepByStep)
