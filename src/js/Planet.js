@@ -267,14 +267,6 @@ export default class Planet {
 
     let radius = this.radius;
 
-    // if (this.options['planet-art']) {
-    //   if (this.name === 'saturn') {
-    //     radius = this.radius * 4;
-    //   } else if (this.name === 'uranus') {
-    //     radius = this.radius * 4.2;
-    //   }
-    // }
-
     if (
       Math.abs(this.offsetX) <= radius &&
       Math.abs(this.offsetY) <= this.radius

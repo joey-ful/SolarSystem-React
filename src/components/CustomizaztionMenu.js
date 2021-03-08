@@ -15,6 +15,7 @@ const CustomizationMenuBlock = styled.div`
   background-color: ${colors['menu']};
   border-radius: 8px;
   box-shadow: 4px 4px 12px ${colors['dark-shadow']};
+  font-family: Helvetica, Arial, sans-serif;
 `;
 
 const MenuTitle = styled.h1`
