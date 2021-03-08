@@ -1,5 +1,5 @@
 export default class Planet {
-  constructor(name, star, radius, color, velocity, orbitRadius) {
+  constructor(name, star, radius, color, velocity, orbitRadius, src) {
     this.name = name;
     this.star = star;
     this.radius = radius;
@@ -18,6 +18,7 @@ export default class Planet {
     this.x = star.x + orbitRadius * Math.cos(this.theta);
     this.y = star.y + orbitRadius * Math.sin(this.theta);
     this.img = new Image();
+    this.img.src = src;
   }
 
   update(ctx, dragType, planetArtToggle) {
@@ -225,7 +226,6 @@ export default class Planet {
     }
 
     ctx.drawImage(this.img, imgX, imgY, width, this.radius * 2);
-    this.img.src = `../images/${this.name}.png`;
     ctx.closePath();
   }
 

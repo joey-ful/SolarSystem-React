@@ -14,6 +14,10 @@ export default function SolarSystem() {
   const orbitToggle = toggleOptions.find(option => option.name === 'orbit-path').checked;
   const planetArtToggle = toggleOptions.find(option => option.name === 'planet-art').checked;
 
+
+  
+
+
   let planets = [];
   let sun;
   let earth;
@@ -24,16 +28,16 @@ export default function SolarSystem() {
         x: window.innerWidth/2,
         y: window.innerHeight/2,
       }
-      sun = new Planet(planet.name, sunStar, planet.radius, planet.color, planet.velocity, planet.orbitRadius);
+      sun = new Planet(planet.name, sunStar, planet.radius, planet.color, planet.velocity, planet.orbitRadius, planet.src);
       planets.push(sun);
     } else if (planet.name === 'earth') {
-      earth = new Planet(planet.name, sun, planet.radius, planet.color, planet.velocity, planet.orbitRadius);
+      earth = new Planet(planet.name, sun, planet.radius, planet.color, planet.velocity, planet.orbitRadius, planet.src);
       planets.push(earth);
     } else {
       if (planet.star === 'sun') {
-        planets.push(new Planet(planet.name, sun, planet.radius, planet.color, planet.velocity, planet.orbitRadius));
+        planets.push(new Planet(planet.name, sun, planet.radius, planet.color, planet.velocity, planet.orbitRadius, planet.src));
       } else {
-        planets.push(new Planet(planet.name, earth, planet.radius, planet.color, planet.velocity, planet.orbitRadius));
+        planets.push(new Planet(planet.name, earth, planet.radius, planet.color, planet.velocity, planet.orbitRadius, planet.src));
       }
     }
   }

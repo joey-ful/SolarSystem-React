@@ -7,6 +7,7 @@ export const planetInfo = [
     color: '#FFF599',
     velocity: 0,
     orbitRadius: 0,
+    src: 'https://user-images.githubusercontent.com/52592748/110282389-bc845f80-8021-11eb-89ff-492586e8f167.png',
   },
   {
     id: 1,
@@ -16,6 +17,7 @@ export const planetInfo = [
     color: '#74B1E9',
     velocity: 0.008,
     orbitRadius: 120,
+    src: 'https://user-images.githubusercontent.com/52592748/110282378-baba9c00-8021-11eb-9ec8-ec06d62dd8be.png',
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ export const planetInfo = [
     color: '#F3E6B7',
     velocity: 0.005,
     orbitRadius: 142,
+    src: 'https://user-images.githubusercontent.com/52592748/110282391-bdb58c80-8021-11eb-97e3-2b7a8b2fd4ee.png',
   },
   {
     id: 3,
@@ -34,6 +37,7 @@ export const planetInfo = [
     color: '#AAE7F0',
     velocity: 0.006,
     orbitRadius: 172,
+    src: 'https://user-images.githubusercontent.com/52592748/110282364-b8584200-8021-11eb-8596-dc93406106a9.png',
   },
   {
     id: 4,
@@ -43,6 +47,7 @@ export const planetInfo = [
     color: '#F0F7F8',
     velocity: 0.02,
     orbitRadius: 28,
+    src: 'https://user-images.githubusercontent.com/52592748/110282379-bb533280-8021-11eb-860a-c22bcc801a94.png',
   },
   {
     id: 5,
@@ -52,6 +57,7 @@ export const planetInfo = [
     color: '#F39999',
     velocity: 0.007,
     orbitRadius: 219,
+    src: 'https://user-images.githubusercontent.com/52592748/110282375-baba9c00-8021-11eb-8f37-23b207c654b9.png',
   },
   {
     id: 6,
@@ -61,6 +67,7 @@ export const planetInfo = [
     color: '#B3D8A1',
     velocity: 0.004,
     orbitRadius: 260,
+    src: 'https://user-images.githubusercontent.com/52592748/110282372-b9896f00-8021-11eb-858f-1659a0083b05.png',
   },
   {
     id: 7,
@@ -70,6 +77,7 @@ export const planetInfo = [
     color: '#E3AE90',
     velocity: 0.0035,
     orbitRadius: 310,
+    src: 'https://user-images.githubusercontent.com/52592748/110282385-bbebc900-8021-11eb-8456-16be306e581f.png',
   },
   {
     id: 8,
@@ -79,6 +87,7 @@ export const planetInfo = [
     color: '#8C7E75',
     velocity: 0.003,
     orbitRadius: 357,
+    src: 'https://user-images.githubusercontent.com/52592748/110282390-bd1cf600-8021-11eb-8b81-3d0960d7e0b9.png',
   },
   {
     id: 9,
@@ -88,5 +97,6 @@ export const planetInfo = [
     color: '#A888BB',
     velocity: 0.002,
     orbitRadius: 396,
+    src: 'https://user-images.githubusercontent.com/52592748/110282382-bb533280-8021-11eb-9ad5-3406c7b7a4a4.png',
   },
 ];
