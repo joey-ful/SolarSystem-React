@@ -5,10 +5,11 @@ import { PlanetProvider } from './PlanetContext.js';
 
 function App() {
 
+
   return (
     <PlanetProvider>
       <Background />
-      <SolarSystem/>
+      <SolarSystem />
     </PlanetProvider>
   );
 }

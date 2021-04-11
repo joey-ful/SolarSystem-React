@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-const useCanvas = (draw, type) => {
+const useCanvas = (draw, type, planets) => {
   const canvasRef = useRef(null);
   
   useEffect(() => {
@@ -31,7 +31,7 @@ const useCanvas = (draw, type) => {
     let animationFrameId;
 
     const animate = () => {
-      draw(ctx, stageWidth, stageHeight);
+      draw(ctx, stageWidth, stageHeight, planets);
       
       if (type === 'dynamic') {
         animationFrameId = window.requestAnimationFrame(animate);
@@ -46,7 +46,7 @@ const useCanvas = (draw, type) => {
       }
       window.removeEventListener('resize', resize);
     }
-  }, [draw, type]);
+  }, [draw, type, planets]);
   
   return canvasRef
 }
